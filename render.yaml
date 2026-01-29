@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: review-management-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: API_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///./reviews.db
+      - key: COHERE_API_KEY
+        sync: false
+      - key: USE_LOCAL_MODEL
+        value: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
