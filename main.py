@@ -42,8 +42,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:5173",
-        "https://*.vercel.app",  # Allow all Vercel deployments
-        "https://review-management.vercel.app"  # Replace with your actual Vercel URL
+        "https://review-management-front.vercel.app",  # Your production frontend
+        "https://*.vercel.app"  # Allow all Vercel preview deployments
     ],
     allow_credentials=True,
     allow_methods=["*"],
